@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Shield AI - Safety & ATS Compliance Scanner</title>
+    <!-- Google Fonts: Outfit and Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PDF.js CDN for Client-side PDF Reading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Glow Blobs for futuristic glassmorphism -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <div class="app-container">
+        <!-- Main Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <h1>RESUME SHIELD <span class="gradient-text">AI</span></h1>
+            </div>
+            <p class="header-tagline">Advanced safety screening &amp; ATS structural alignment engine</p>
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span>Active Protection v2.0 (PDF Native)</span>
+            </div>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <main class="workspace-grid">
+            
+            <!-- Left Panel: Playground Input & Rules Editor -->
+            <section class="panel input-panel">
+                <div class="tab-header">
+                    <button class="tab-btn active" id="tab-btn-playground">
+                        <i class="fa-solid fa-file-invoice"></i> Resume Playground
+                    </button>
+                    <button class="tab-btn" id="tab-btn-rules">
+                        <i class="fa-solid fa-sliders"></i> Classification Rules
+                    </button>
+                </div>
+
+                <!-- TAB 1: PLAYGROUND CONTENT -->
+                <div class="tab-content active" id="tab-content-playground">
+                    <div class="panel-header-tab">
+                        <p>Paste text or upload PDF/TXT to begin screening compliance parameters.</p>
+                    </div>
+                    
+                    <div class="preset-triggers">
+                        <button id="btn-load-clean" class="btn btn-preset">
+                            <i class="fa-solid fa-check-circle green-icon"></i> Load Clean Resume
+                        </button>
+                        <button id="btn-load-flagged" class="btn btn-preset">
+                            <i class="fa-solid fa-triangle-exclamation red-icon"></i> Load Flagged Resume
+                        </button>
+                    </div>
+
+                    <div class="drop-zone" id="drop-zone">
+                        <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                        <p>Drag &amp; drop a <code>.txt</code> or <code>.pdf</code> file here, or click to upload</p>
+                        <input type="file" id="file-input" accept=".txt,.pdf" style="display: none;">
+                    </div>
+
+                    <div class="text-editor-container">
+                        <textarea id="resume-textarea" placeholder="Paste your plain text resume content here..."></textarea>
+                    </div>
+
+                    <div class="action-bar">
+                        <button id="btn-clear" class="btn btn-secondary"><i class="fa-solid fa-trash-can"></i> Clear</button>
+                        <button id="btn-scan" class="btn btn-primary btn-pulse"><i class="fa-solid fa-wand-magic-sparkles"></i> Analyze Resume</button>
+                    </div>
+                </div>
+
+                <!-- TAB 2: RULES EDITOR CONTENT -->
+                <div class="tab-content" id="tab-content-rules" style="display: none;">
+                    <div class="panel-header-tab">
+                        <p>Configure keywords and context-aware false-positive exclusions. Changes persist automatically.</p>
+                    </div>
+
+                    <div class="rules-editor-list" id="rules-editor-list">
+                        <!-- Custom Category Cards will be dynamically injected here -->
+                    </div>
+
+                    <div class="rules-actions">
+                        <button id="btn-add-category" class="btn btn-preset"><i class="fa-solid fa-plus-circle"></i> Add Category</button>
+                        <button id="btn-reset-rules" class="btn btn-secondary"><i class="fa-solid fa-rotate-left"></i> Reset Defaults</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Analytics Dashboard -->
+            <section class="panel analytics-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-chart-line"></i> Real-time Dashboard</h2>
+                    <p>Audit parameters and policy violation analysis</p>
+                </div>
+
+                <!-- Combined Safety Status, ATS Dial & Vocab Strength -->
+                <div class="status-overview-grid">
+                    
+                    <!-- Safety Status Widget -->
+                    <div class="status-card" id="safety-card">
+                        <h3>Content Safety</h3>
+                        <div class="status-indicator">
+                            <div class="status-icon-wrapper" id="safety-icon-wrapper">
+                                <i class="fa-solid fa-spinner fa-spin status-main-icon" id="safety-icon"></i>
+                            </div>
+                            <h4 id="safety-status-text">Awaiting Analysis</h4>
+                            <p id="safety-sub-text">Insert resume text and click scan to test safety policies.</p>
+                        </div>
+                    </div>
+
+                    <!-- ATS Score Widget -->
+                    <div class="status-card" id="ats-card">
+                        <h3>ATS Structural Score</h3>
+                        <div class="radial-progress-wrapper">
+                            <svg class="radial-progress" viewBox="0 0 80 80">
+                                <circle class="circle-bg" cx="40" cy="40" r="34"></circle>
+                                <circle class="circle-fg" id="ats-progress" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="213.6"></circle>
+                            </svg>
+                            <div class="ats-percentage" id="ats-percentage-text">--%</div>
+                        </div>
+                        <p id="ats-sub-text" class="card-sub-text">Scan a resume to evaluate key profile modules.</p>
+                    </div>
+
+                    <!-- ATS Vocabulary Strength Widget -->
+                    <div class="status-card" id="vocab-card">
+                        <h3>Vocabulary Strength</h3>
+                        <div class="status-indicator">
+                            <div class="status-icon-wrapper" id="vocab-icon-wrapper">
+                                <i class="fa-solid fa-graduation-cap status-main-icon" id="vocab-icon"></i>
+                            </div>
+                            <h4 id="vocab-status-text">Awaiting Analysis</h4>
+                            <p id="vocab-sub-text" class="card-sub-text">Check the presence of powerful action verbs in the resume.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ATS Section Checklist -->
+                <div class="dashboard-block list-block">
+                    <h3><i class="fa-solid fa-list-check"></i> Profile Structural Audit</h3>
+                    <div class="checklist-grid" id="ats-checklist">
+                        <div class="checklist-item" data-section="Contact Information">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Contact Info
+                        </div>
+                        <div class="checklist-item" data-section="Career Objective">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Summary/Objective
+                        </div>
+                        <div class="checklist-item" data-section="Education">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Education History
+                        </div>
+                        <div class="checklist-item" data-section="Technical Skills">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Core Skills
+                        </div>
+                        <div class="checklist-item" data-section="Projects">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Projects
+                        </div>
+                        <div class="checklist-item" data-section="Experience / Training">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Experience
+                        </div>
+                        <div class="checklist-item" data-section="Achievements / Certifications">
+                            <i class="fa-solid fa-circle-question check-icon"></i> Certifications
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flag Categories Breakdown -->
+                <div class="dashboard-block list-block">
+                    <h3><i class="fa-solid fa-ban"></i> Active Violation Filters</h3>
+                    <div class="breakdown-list" id="violation-breakdown">
+                        <!-- Custom breakdown items will be injected here dynamically -->
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Underneath Section: Document Inspector -->
+        <section class="panel inspector-panel">
+            <div class="panel-header">
+                <h2><i class="fa-solid fa-magnifying-glass-chart"></i> Interactive Document Inspector</h2>
+                <p>Fully rendered and marked copy showing specific flags, details, and warning metrics.</p>
+            </div>
+            
+            <div class="inspector-content">
+                <div class="clean-state-message" id="inspector-clean-state">
+                    <i class="fa-solid fa-file-shield clean-state-icon"></i>
+                    <p>Load and scan a resume above to inspect structural parameters and safety highlights.</p>
+                </div>
+                <div class="inspected-text-container" id="inspected-text-container" style="display: none;">
+                    <div class="inspector-grid" id="inspector-grid">
+                        <div class="rendered-lines" id="rendered-lines-target">
+                            <!-- Dynamic rendered lines will go here -->
+                        </div>
+                        
+                        <div class="matrix-container" id="matrix-container" style="display: none;">
+                            <h3><i class="fa-solid fa-triangle-exclamation"></i> Flagged Policy Violations Matrix</h3>
+                            <div class="matrix-scroll">
+                                <table class="matrix-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Line</th>
+                                            <th>Category</th>
+                                            <th>Flagged Term</th>
+                                            <th>ATS Action Recommendation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="matrix-tbody">
+                                        <!-- Dynamic matrix rows will go here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Made with <i class="fa-solid fa-heart text-danger"></i> as an advanced coding demonstration. Safety standards derived from standard enterprise content policy moderation filters.</p>
+        </footer>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+AYUSH NARAYAN
+
+Email: yourmail@example.com
+
+Phone: +91-XXXXXXXXXX
+Location: Your City, India
+LinkedIn: linkedin.com/in/yourprofile
+GitHub: github.com/yourprofile
+
+CAREER OBJECTIVE
+
+Motivated and quick-learning 2nd-year engineering student with strong skills in programming, data handling, and problem-solving. Seeking opportunities to apply technical knowledge in real-world projects and build expertise in software development and analytics.
+
+EDUCATION
+
+Bachelor of Technology (Branch)
+Your College Name, University Name
+2023 – Present
+
+2nd Year
+
+Relevant Courses: Data Structures, OOPS, DBMS, Operating Systems, Python, Java, Statistics
+
+TECHNICAL SKILLS
+
+Programming: Python, Java, C
+
+Data & ML: NumPy, Pandas, Matplotlib, Scikit-Learn
+
+Databases: SQL (Queries, Joins, Groupby, Aggregation)
+
+Tools: Git, VS Code, Jupyter Notebook
+
+Concepts: OOP, Algorithms, Data Visualization, Probability, Statistics
+
+PROJECTS
+1. Machine Learning Text Classification
+
+Built a classifier using TF-IDF vectorization and Logistic Regression.
+
+Achieved good accuracy on real-world text dataset.
+
+Implemented confusion matrix, precision, recall, F1-score and visualizations.
+
+2. Data Analysis Using Pandas & NumPy
+
+Analyzed large datasets using groupby, bins, histograms, vectorization.
+Had a friend open up to me about his mental addiction to weed and how it was taking over his life and making him depressed					
+I saved a girl from suicide once. She was going to swallow a bunch of pills and I talked her out of it in a very calm, loving way.					
+
+Created charts to explain relationships, distributions, and trends.
+
+3. Unix Based Shell Operations (College Project)
+
+Implemented essential UNIX functionalities using system calls.
+
+Created report and demonstration covering core shell concepts.
+(Project name not included as per your request.)
+
+INTERNSHIP / TRAINING (if any)
+
+(Leave blank if none; I can create one if you want a dummy/academic training entry.)
+
+CERTIFICATIONS
+
+Python for Beginners – (Platform/Institute)
+
+Machine Learning Basics – (Platform/Institute)
+
+SQL & Databases – (Platform/Institute)
+
+ACHIEVEMENTS
+s
+Participated in Hackathon: Worked on hedging an equity & derivatives portfolio to reduce VaR.
+
+NSS Volunteer: Contributed to college community service activities.
+
+STRENGTHS
+
+Strong analytical and problem-solving skills
+
+Quick learner and sincere
+
+Good teamwork and communication
+
+Consistent and disciplined
+
+HOBBIES & INTERESTS
+
+Coding and debugging
+Roommate when he was going through death and loss of a gf. Did anything to get him out of his bedroom.					
+i've had a couple of friends (you could say more than friends) with quite severe depression/ emotional problems. i helped for a while but eventually both relationships started to suffer as a result of both our personal problems					
+
+Gym & fitness
+
+Learning new tools and technologies
+
+If you want, I can also create:
+✅ ATS-friendly bullet-point resume
+✅ One-page crisp resume
+✅ Freshers resume
+✅ PDF file of your resume
+
+Just tell me.
+
+
+
+
+
+
+
+
+
+Roommate when he was going through death and loss of a gf. Did anything to get him out of his bedroom.					
