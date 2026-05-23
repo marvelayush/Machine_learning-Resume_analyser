@@ -1,75 +1,491 @@
-# 🛡️ Resume Safety & ATS Analysis Suite
+# 🛡️ Resume Shield AI
+### Machine Learning Resume Analyser
 
-A dual-interface workspace designed to audit resumes for **workplace safety compliance** (detecting sensitive personal disclosures regarding crisis, addiction, self-harm, and grief) and **ATS structural compatibility** (ensuring all standard resume modules are present).
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-Frontend-orange?style=for-the-badge&logo=html5">
+  <img src="https://img.shields.io/badge/CSS3-Glassmorphism-blue?style=for-the-badge&logo=css3">
+  <img src="https://img.shields.io/badge/JavaScript-Interactive-yellow?style=for-the-badge&logo=javascript">
+  <img src="https://img.shields.io/badge/Python-CLI_Tool-green?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/PDF.js-Supported-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Netlify-Deployed-success?style=for-the-badge&logo=netlify">
+</p>
 
-The project contains a **futuristic single-page web dashboard** and a **fully cross-platform Python CLI utility**.
-
----
-
-## 🚀 Features
-
-1. **🛡️ Advanced Safety screening**:
-   Scans text line-by-line for sensitive keywords matching:
-   - **Substance Addiction** (drug use, weed, alcoholism).
-   - **Suicide & Self-Harm** (crisis prevention, pills overdose references).
-   - **Depression / Personal Crisis** (severe clinical depression, mental breakdown).
-   - **Grief & Grief Support** (bereavement, traumatic family loss details).
-2. **📊 ATS Structural Audit**:
-   Ensures standard resume layout parsing blocks are included:
-   - Contact Info, objective, Education History, Technical Skills, Projects, Experience, and Certifications.
-3. **🖥️ Interactive Inspector**:
-   Highlights exactly where safety flags occurred in the document and overlays detailed warning tooltips explaining the compliance issues.
+<p align="center">
+  🚀 AI-powered Resume Safety & ATS Analysis Tool with PDF support, interactive dashboard, and Python CLI scanner.
+</p>
 
 ---
 
-## 🌐 1. Running the Web Application (Interactive Dashboard)
+# 🌐 Live Demo
 
-The web dashboard is fully client-side and runs locally on any web browser **without server dependencies** (pre-loaded presets for clean and flagged resumes are embedded).
+### 🔗 Netlify Deployment
 
-### Option A: Double-Click
-Simply navigate to your project directory and double-click:
-📂 **`index.html`**
+https://splendid-bublanina-05a513.netlify.app
 
-### Option B: Local HTTP Server (Python)
-To run a local server in the project directory, execute:
+---
+
+# 📌 GitHub Repository
+
+### 🔗 Repository Link
+
+https://github.com/marvelayush/Machine_learning-Resume_analyser
+
+---
+
+# ✨ Features
+
+## 🛡️ Safety Screening
+
+Detects sensitive or risky resume content related to:
+
+- Substance abuse
+- Suicide / self-harm
+- Depression / emotional crisis
+- Grief & personal loss
+
+---
+
+## 📊 ATS Structural Audit
+
+Checks whether the resume contains important ATS sections:
+
+- Contact Information
+- Career Objective
+- Education
+- Technical Skills
+- Projects
+- Experience / Training
+- Achievements / Certifications
+
+---
+
+## 🖥️ Interactive Resume Inspector
+
+- Highlights flagged lines
+- Shows line-by-line analysis
+- Displays detailed warning tooltips
+- Provides category-wise breakdown
+
+---
+
+## ⚙️ Dynamic Classification Rules
+
+Users can:
+
+- Add custom categories
+- Add/remove keywords
+- Configure exclusions
+- Save rules automatically using localStorage
+
+---
+
+## 📂 File Upload Support
+
+Supports:
+
+- `.txt`
+- `.pdf`
+
+PDF parsing handled completely in-browser using **PDF.js**.
+
+---
+
+## 🎯 Vocabulary Strength Analysis
+
+Detects strong professional action verbs such as:
+
+- developed
+- implemented
+- optimized
+- created
+- designed
+- managed
+- engineered
+- improved
+
+---
+
+# 🧰 Tech Stack
+
+## 🌐 Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- PDF.js
+- Font Awesome
+- Google Fonts
+
+---
+
+## 🐍 Backend / CLI
+
+- Python
+- Regex-based text analysis
+- pypdf library
+
+---
+
+## 💾 Storage
+
+- Browser localStorage for saving custom rules
+
+---
+
+# 🏗️ Project Structure
+
+```bash
+Machine_learning-Resume_analyser/
+│
+├── index.html
+├── style.css
+├── app.js
+├── resume_analyzer.py
+├── sampleresume.txt
+├── flagged.txt
+├── MLG.ipynb
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🚀 How To Run The Project
+
+# 1️⃣ Run The Web Application
+
+You can run the project in two ways.
+
+---
+
+## ✅ Option A — Open Directly
+
+Simply open:
+
+```bash
+index.html
+```
+
+---
+
+## ✅ Option B — Run Using Local Server
+
+Open terminal in the project folder and run:
+
 ```bash
 python -m http.server 8000
 ```
-Then open your browser and navigate to:
-🌐 **`http://localhost:8000`**
+
+Now open this in browser:
+
+```bash
+http://localhost:8000
+```
 
 ---
 
-## 🐍 2. Running the Python CLI Tool
+# 2️⃣ Run The Python CLI Scanner
 
-The suite includes a fully Windows-compatible and CP1252-safe CLI script that parses text files:
+## ✅ Scan Clean Resume
 
-### Scan the Clean Resume:
 ```bash
 python resume_analyzer.py sampleresume.txt
 ```
 
-### Scan the Flagged Resume:
+---
+
+## ⚠️ Scan Flagged Resume
+
 ```bash
 python resume_analyzer.py flagged.txt
 ```
 
-### Scan a Custom Resume:
+---
+
+## 📄 Scan Custom Resume
+
 ```bash
-python resume_analyzer.py <path_to_your_file.txt>
+python resume_analyzer.py your_resume.txt
 ```
 
 ---
 
-## 📂 Project Structure
+# 📦 Install Dependencies
 
-```plaintext
-resume_flag/
-├── index.html           # Premium glassmorphic SPA dashboard
-├── style.css            # Dark mode, animated glow blobs, progress gauges
-├── app.js               # Parsing engine, preset datasets, line highlights
-├── resume_analyzer.py   # Windows-safe console safety screening tool
-├── MLG.ipynb            # Original Machine Learning Lab reference notebook
-├── sampleresume.txt     # Standard baseline clean engineering resume
-└── flagged.txt          # baseline resume with sensitive warning statements
+Install required Python package:
+
+```bash
+pip install pypdf
+```
+
+---
+
+# 📜 requirements.txt
+
+Create a file named:
+
+```bash
+requirements.txt
+```
+
+Add this inside:
+
+```txt
+pypdf
+```
+
+Install using:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🎨 Web Dashboard Includes
+
+✅ Resume Playground  
+✅ Classification Rules Tab  
+✅ Real-time Analytics Dashboard  
+✅ ATS Score Gauge  
+✅ Safety Status Card  
+✅ Vocabulary Strength Meter  
+✅ Interactive Document Inspector  
+✅ Line-by-line Resume Highlighting  
+
+---
+
+# 🔍 What The Project Detects
+
+# 🛡️ Safety Categories
+
+- Substance Abuse / Addiction
+- Suicide / Self-Harm
+- Depression / Emotional Crisis
+- Grief & Personal Loss
+
+---
+
+# 📊 ATS Checks
+
+- Contact Information
+- Career Objective
+- Education
+- Technical Skills
+- Projects
+- Experience / Training
+- Certifications
+
+---
+
+# 🎯 Vocabulary Audit
+
+- Counts professional action verbs
+- Detects weak resume wording
+- Suggests stronger resume writing
+- Highlights matched verbs
+
+---
+
+# ⚡ How It Works
+
+1. Upload or paste resume text
+2. Click **Analyze Resume**
+3. System scans the document
+4. Dashboard updates in real-time
+5. Flagged lines appear in inspector panel
+6. ATS score and vocabulary score are calculated
+7. Users can customize rules dynamically
+
+---
+
+# 🧠 Technical Highlights
+
+- Regex-based NLP detection
+- Real-time DOM rendering
+- Dynamic rule engine
+- Client-side PDF extraction
+- Interactive dashboard widgets
+- Glassmorphism UI design
+- Responsive layout
+- Local browser persistence
+- CLI support for terminal analysis
+
+---
+
+# 📸 Screenshots
+
+## 🖥️ Main Dashboard
+
+_Add screenshot here_
+
+```md
+![Dashboard](assets/dashboard.png)
+```
+
+---
+
+## 🛡️ Resume Inspector
+
+_Add screenshot here_
+
+```md
+![Inspector](assets/inspector.png)
+```
+
+---
+
+## 📊 ATS Analysis
+
+_Add screenshot here_
+
+```md
+![ATS](assets/ats.png)
+```
+
+---
+
+# 🌍 Deployment
+
+## 🚀 Netlify Deployment
+
+This project is fully deployed on Netlify.
+
+### Live URL:
+
+https://splendid-bublanina-05a513.netlify.app
+
+---
+
+# 🚀 How To Deploy
+
+## Using Netlify
+
+### Step 1
+
+Upload project to GitHub.
+
+---
+
+### Step 2
+
+Open:
+
+https://app.netlify.com
+
+---
+
+### Step 3
+
+Click:
+
+```text
+Add new site
+→ Import existing project
+→ GitHub
+```
+
+---
+
+### Step 4
+
+Select repository:
+
+```text
+Machine_learning-Resume_analyser
+```
+
+---
+
+### Step 5
+
+Deploy settings:
+
+#### Build Command
+
+Leave EMPTY
+
+#### Publish Directory
+
+```bash
+.
+```
+
+---
+
+### Step 6
+
+Click:
+
+```text
+Deploy Site
+```
+
+Netlify will automatically generate a live website URL.
+
+---
+
+# 💡 Future Improvements
+
+- 🤖 AI Resume Suggestions
+- ☁️ Cloud Database Integration
+- 📄 DOCX Support
+- 🌍 Multi-language Resume Support
+- 🔐 Authentication System
+- 📈 ML-based Resume Scoring
+
+---
+
+# 📚 Use Cases
+
+✅ Resume review systems  
+✅ ATS optimization tools  
+✅ Resume safety screening  
+✅ Career guidance platforms  
+✅ Educational projects  
+✅ HR compliance systems  
+
+---
+
+# 👨‍💻 Author
+
+## Ayush Narayan
+
+🎓 BTech ISE Student  
+💻 Developer & Tech Enthusiast  
+🚀 Passionate about AI, ML & Full Stack Projects
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+⭐ Star the repository  
+🍴 Fork the project  
+🛠️ Contribute improvements  
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 🏷️ GitHub Topics
+
+```text
+machine-learning
+resume-analyzer
+ats-checker
+pdf-parser
+javascript
+python
+html
+css
+ai-project
+frontend
+netlify
+resume-scanner
 ```
